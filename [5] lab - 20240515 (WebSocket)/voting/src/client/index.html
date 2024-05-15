@@ -3,11 +3,16 @@
   <head>
     <title>WebSocket OnLine Voting System</title>
     <script>
-      var socket = new WebSocket("ws://localhost:3000/WebSocket/actions"); // punkt 8a
+      //var socket = new WebSocket("ws://localhost:3000/WebSocket/actions"); // punkt 8a
+      var socket = new WebSocket("ws://localhost:3000/voting"); // punkt 16c
       socket.onmessage = onMessage;
       function onMessage(event) {
         //parse received message
         //insert voting results into respective span elements
+        // punkt 12
+        const response = JSON.parse(event.data);
+        document.getElementById("pizza").innerText = response.pizza;
+        document.getElementById("pasta").innerText = response.pasta;
       }
 
       function vote(value) {
