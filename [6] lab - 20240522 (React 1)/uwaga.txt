@@ -1,0 +1,1 @@
+Wykonując zadania, w pierwszym punkcie należy wykonać komendę `npx create-react-app <nazwa_projektu>` zamiast `npx create-next-app <nazwa_projektu>`
