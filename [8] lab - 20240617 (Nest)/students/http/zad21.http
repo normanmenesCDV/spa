@@ -1,0 +1,17 @@
+PATCH http://localhost:3000/students/2 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "XXXX"
+}
+
+GET http://localhost:3000/students/ HTTP/1.1
+
+PATCH http://localhost:3000/students/2 HTTP/1.1
+content-type: application/json
+
+{
+    "lastName": "YYYY"
+}
+
+GET http://localhost:3000/students/ HTTP/1.1

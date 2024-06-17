@@ -1,0 +1,37 @@
+GET http://localhost:3000/students HTTP/1.1
+
+POST http://localhost:3000/students HTTP/1.1
+content-type: application/json
+
+{
+    "index": 10001,
+    "firstName": "Adam",
+    "lastName": "Kowalski"
+}
+
+POST http://localhost:3000/students HTTP/1.1
+content-type: application/json
+
+{
+    "index": 10002,
+    "firstName": "Michał",
+    "lastName": "Woźniak"
+}
+
+POST http://localhost:3000/students HTTP/1.1
+content-type: application/json
+
+{
+    "index": 10003,
+    "firstName": "Mateusz",
+    "lastName": "Urbanowicz"
+}
+
+POST http://localhost:3000/students HTTP/1.1
+content-type: application/json
+
+{
+    "index": 10004,
+    "firstName": "Błażej",
+    "lastName": "Kozelski"
+}
