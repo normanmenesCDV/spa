@@ -70,6 +70,17 @@ export class StudentsService {
     return `Zaktualizowano studenta o identyfikatorze #${id}`;
   }
 
+  replace(id: number, updateStudentDto: UpdateStudentDto) {
+    const studentArrIndex = this.findIndexIfExists(id);
+    this.students[studentArrIndex] = {
+      ...this.students[studentArrIndex],
+      index: updateStudentDto.index,
+      firstName: updateStudentDto.firstName,
+      lastName: updateStudentDto.lastName,
+    };
+    return `Zaktualizowano studenta o identyfikatorze #${id}`;
+  }
+
   remove(id: number) {
     const studentArrIndex = this.findIndexIfExists(id);
     this.students.splice(studentArrIndex, 1);

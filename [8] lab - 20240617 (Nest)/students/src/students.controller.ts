@@ -6,10 +6,12 @@ import {
   Patch,
   Param,
   Delete,
+  Put,
 } from '@nestjs/common';
 import { StudentsService } from './students.service';
 import { CreateStudentDto } from '../dto/create-student.dto';
 import { UpdateStudentDto } from '../dto/update-student.dto';
+import { UpdatePutStudentDto } from 'dto/update-put-student.dto';
 
 @Controller('students')
 export class StudentsController {
@@ -18,6 +20,14 @@ export class StudentsController {
   @Post()
   create(@Body() createStudentDto: CreateStudentDto) {
     return this.studentsService.create(createStudentDto);
+  }
+
+  @Put(':id')
+  replace(
+    @Param('id') id: string,
+    @Body() updateStudentDto: UpdatePutStudentDto,
+  ) {
+    return this.studentsService.replace(+id, updateStudentDto);
   }
 
   @Get()

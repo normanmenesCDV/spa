@@ -1,0 +1,22 @@
+GET http://localhost:3000/students/2 HTTP/1.1
+
+PUT http://localhost:3000/students/2 HTTP/1.1
+content-type: application/json
+
+{
+    "index": 12345,
+    "firstName": "Adam",
+    "lastName": "Adamowski"
+}
+
+GET http://localhost:3000/students/2 HTTP/1.1
+
+PUT http://localhost:3000/students/2 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Monika",
+    "lastName": "Woźniak"
+}
+
+GET http://localhost:3000/students/2 HTTP/1.1
