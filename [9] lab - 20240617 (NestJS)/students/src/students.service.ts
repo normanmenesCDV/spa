@@ -35,16 +35,17 @@ export class StudentsService {
     return idx;
   }
 
-  create(createStudentDto: CreateStudentDto) {
-    this.maxId++;
-    var student = new Student();
-    (student.id = this.maxId),
-      (student.index = createStudentDto.index),
-      (student.firstName = createStudentDto.firstName),
-      (student.lastName = createStudentDto.lastName);
+  create(createTodoDto: CreateStudentDto) {
+    const student: Student = {
+      id: ++this.maxId,
+      index: createTodoDto.index,
+      firstName: createTodoDto.firstName,
+      lastName: createTodoDto.lastName,
+    };
 
     this.students.push(student);
-    return 'Dodano nowego studenta';
+
+    return student;
   }
 
   findAll() {
